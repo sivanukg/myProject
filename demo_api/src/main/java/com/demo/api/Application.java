@@ -26,7 +26,7 @@ public class Application extends SpringBootServletInitializer {
 		System.out.println("This is my first Spring boot project");
 		
 		System.out.println("My git commit");
-		
+		System.out.println("My git commit1");
 		SpringApplication.run(Application.class, args);
         }  
 
