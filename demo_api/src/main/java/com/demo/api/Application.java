@@ -21,8 +21,11 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableAutoConfiguration
 public class Application extends SpringBootServletInitializer {
 	public static void main(String[] args) {
+		
+		
 		System.out.println("This is my first Spring boot project");
 		
+		System.out.println("My git commit");
 		
 		SpringApplication.run(Application.class, args);
         }  
