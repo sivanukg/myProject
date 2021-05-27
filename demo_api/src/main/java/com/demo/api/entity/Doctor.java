@@ -13,6 +13,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Index;
 
 @Entity
 @Table(name = "DOCTOR")
@@ -28,6 +29,10 @@ public class Doctor implements Serializable {
 	@GeneratedValue(generator = "system-uuid")
 	@GenericGenerator(name = "system-uuid", strategy = "uuid2")
 	private String id;
+	
+	@NotNull
+	@Column(name = "city", nullable = false)
+	private String city;
 
 	@NotNull
 	@Column(name = "Firstname", nullable = false)
