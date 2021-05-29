@@ -54,6 +54,7 @@ public class DoctorController {
 					.header("Failure", "A new doctor cannot already have an ID")
 					.body(null);
 		}
+		
 		Doctor doctor = doctorMapper.doctorDTOToDoctor(doctorDTO);
 
 		Doctor result = doctorRepository.save(doctor);
