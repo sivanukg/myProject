@@ -47,7 +47,9 @@ public class DoctorController {
 	@RequestMapping(value = "/doctor", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<DoctorDTO> create(
 			@Valid @RequestBody DoctorDTO doctorDTO) throws URISyntaxException {
+		
 		log.debug("REST request to save doctor : {}", doctorDTO);
+		
 		if (doctorDTO.getId() != null) {
 			return ResponseEntity
 					.badRequest()
@@ -55,9 +57,15 @@ public class DoctorController {
 					.body(null);
 		}
 		
+		//convert DTO to entity
+		
+		
+		// conversion ... DTo to entity
+		
 		Doctor doctor = doctorMapper.doctorDTOToDoctor(doctorDTO);
 
 		Doctor result = doctorRepository.save(doctor);
+		
 		return ResponseEntity
 				.created(new URI("/api/doctorentity/" + result.getId()))
 				.headers(
@@ -66,6 +74,7 @@ public class DoctorController {
 				.body(doctorMapper.doctorToDoctorDTO(result));
 	}
 
+	
 	@RequestMapping(value = "/getAllDoctor", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@Transactional(readOnly = true)
 	public ResponseEntity<List<DoctorDTO>> getAll(

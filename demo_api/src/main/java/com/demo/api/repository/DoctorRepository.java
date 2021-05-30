@@ -15,4 +15,5 @@ public interface DoctorRepository extends Repository<Doctor, String> {
 	Doctor findOne(String id);
 
 	Doctor save(Doctor doctor);
+	
 }
