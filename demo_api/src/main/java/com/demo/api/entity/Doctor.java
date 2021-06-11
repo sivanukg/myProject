@@ -26,24 +26,24 @@ public class Doctor implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(generator = "system-uuid")
-	@GenericGenerator(name = "system-uuid", strategy = "uuid2")
+	//@GeneratedValue(generator = "system-uuid")
+	//@GenericGenerator(name = "system-uuid", strategy = "uuid2")
 	private String id;
 	
-	@NotNull
-	@Column(name = "city", nullable = false)
+	//@NotNull
+	@Column(name = "city")
 	private String city;
 
-	@NotNull
-	@Column(name = "Firstname", nullable = false)
+	//@NotNull
+	@Column(name = "Firstname")
 	private String firstname;
 
-	@NotNull
-	@Column(name = "Lastname", nullable = false)
+	//@NotNull
+	@Column(name = "Lastname")
 	private String lastname;
 
-	@NotNull
-	@Column(name = "Address", nullable = false)
+	//@NotNull
+	@Column(name = "Address")
 	private String address;
 
 	public String getId() {
