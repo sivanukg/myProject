@@ -43,7 +43,8 @@ public class DoctorController {
 
 	@Autowired
 	private DoctorMapper doctorMapper;
-
+	
+	//doctor post method
 	@RequestMapping(value = "/doctor", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<DoctorDTO> create(
 			@Valid @RequestBody DoctorDTO doctorDTO) throws URISyntaxException {
